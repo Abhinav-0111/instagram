@@ -99,7 +99,7 @@ const LeftSidebar = () => {
                                         handleCategories(item?.name);
                                         linkHandler(item?.name);
                                     }}
-                                    className={`flex h-screen overflow-hidden ${
+                                    className={`flex ${
                                         categories === "Messages"
                                             ? "justify-center"
                                             : ""
