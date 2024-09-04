@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { options } from "../services/constant";
 import { FaInstagram } from "react-icons/fa6";
 import ContextApi from "../context/ContextApi";
 import { useNavigate } from "react-router-dom";
@@ -8,8 +7,13 @@ import { getUser } from "../redux/userSlice";
 import CreatePostDigloue from "./CreatePostDigloue";
 import { setPosts } from "../redux/postSlice";
 import { getSelectedUser } from "../redux/messageSlice";
-import { Button, Popover, Typography } from "@mui/material";
-import { setLikeNotification } from "../redux/rtnSlice";
+import { MdHomeFilled } from "react-icons/md";
+import { FiSearch } from "react-icons/fi";
+import { MdOutlineExplore } from "react-icons/md";
+import { FaRegMessage } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa6";
+import { IoMdAdd } from "react-icons/io";
+import { MdLogout } from "react-icons/md";
 
 const LeftSidebar = () => {
     const { categories, handleCategories, setpostdialog, handleSelectedUser } =
@@ -26,6 +30,17 @@ const LeftSidebar = () => {
         dispatch(setPosts([]));
         navigate("/register");
     };
+
+    const options = [
+        { name: "Home", icon: <MdHomeFilled size={25} /> },
+        { name: "Search", icon: <FiSearch size={25} /> },
+        { name: "Explore", icon: <MdOutlineExplore size={25} /> },
+        { name: "Messages", icon: <FaRegMessage size={25} /> },
+        { name: "Notifications", icon: <FaRegHeart size={25} /> },
+        { name: "Create", icon: <IoMdAdd size={25} /> },
+        { name: "Logout", icon: <MdLogout size={25} /> },
+        { name: "Profile", avatar: true },
+    ];
 
     const linkHandler = (item) => {
         if (item === "Notifications") {

@@ -10,7 +10,7 @@ import path from "path";
 
 dotenv.config();
 const __dirname = path.resolve();
-const port = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000;
 app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.json({ extended: true }));
@@ -24,5 +24,5 @@ app.get("*", (req, res) => {
 
 server.listen(process.env.PORT, () => {
     Connection();
-    console.log(`Server Running Successfully on port ${port}`);
+    console.log(`Server Running Successfully on port ${PORT}`);
 });
