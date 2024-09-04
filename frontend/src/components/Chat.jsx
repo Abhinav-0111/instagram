@@ -13,7 +13,7 @@ const Chat = () => {
         const fetchFollowingUser = async () => {
             try {
                 const res = await axios.get(
-                    `http://localhost:8000/followinguser/${user?._id}`
+                    `https://instagram-3-u1yc.onrender.com/followinguser/${user?._id}`
                 );
                 dispatch(getFollowingUser(res?.data?.message));
             } catch (error) {

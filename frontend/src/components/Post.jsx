@@ -25,7 +25,7 @@ const Post = ({ item }) => {
     const deletePostHandler = async () => {
         try {
             const res = await axios.put(
-                `http://localhost:8000/deletepost/${item?._id}`,
+                `https://instagram-3-u1yc.onrender.com/deletepost/${item?._id}`,
                 {
                     id: user?._id,
                 }
@@ -42,7 +42,7 @@ const Post = ({ item }) => {
     const likeOrDislikeHandle = async (id) => {
         try {
             const res = await axios.put(
-                `http://localhost:8000/likedislike/${item?._id}`,
+                `https://instagram-3-u1yc.onrender.com/likedislike/${item?._id}`,
                 { id: id }
             );
             dispatch(setRefresh());
@@ -54,7 +54,7 @@ const Post = ({ item }) => {
     const commentHandler = async () => {
         try {
             const res = await axios.post(
-                `http://localhost:8000/comment/${item?._id}`,
+                `https://instagram-3-u1yc.onrender.com/comment/${item?._id}`,
                 { id: user?._id, text: comment }
             );
             if (res.status === 200) {
@@ -69,7 +69,7 @@ const Post = ({ item }) => {
     const bookmarkHandler = async () => {
         try {
             const res = await axios.put(
-                `http://localhost:8000/bookmark/${item?._id}`,
+                `https://instagram-3-u1yc.onrender.com/bookmark/${item?._id}`,
                 { id: user?._id }
             );
             dispatch(bookmarkUpdate(item?._id));

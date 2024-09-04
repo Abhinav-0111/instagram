@@ -28,7 +28,7 @@ const useGetAllPost = () => {
     const fetchAllPosts = async () => {
         try {
             const res = await axios.get(
-                `http://localhost:8000/getallpost/${user?._id}`
+                `https://instagram-3-u1yc.onrender.com/getallpost/${user?._id}`
             );
             if (res?.status === 200) {
                 dispatch(setPosts(res?.data?.message));

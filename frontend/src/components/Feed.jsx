@@ -17,7 +17,7 @@ const Feed = () => {
         if (user?.following?.includes(id)) {
             try {
                 const res = await axios.post(
-                    `http://localhost:8000/unfollow/${id}`,
+                    `https://instagram-3-u1yc.onrender.com/unfollow/${id}`,
                     {
                         id: user?._id,
                     }

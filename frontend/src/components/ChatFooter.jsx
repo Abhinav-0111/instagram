@@ -16,7 +16,7 @@ const ChatFooter = () => {
     const onSubmitHandler = async () => {
         try {
             const res = await axios.post(
-                `http://localhost:8000/send/${selectedUser?._id}`,
+                `https://instagram-3-u1yc.onrender.com/send/${selectedUser?._id}`,
                 {
                     id: user?._id,
                     message: message,
