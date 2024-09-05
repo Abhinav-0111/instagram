@@ -36,7 +36,7 @@ const EditProfile = () => {
         try {
             setloading(true);
             const res = await axios.post(
-                `https://instagram-3-u1yc.onrender.com/profile/edit`,
+                `http://localhost:8000/profile/edit`,
                 formData
             );
             if (res.status == 200) {

@@ -9,7 +9,7 @@ const useGetSuggestedUsers = () => {
     const fetchSuggestedUser = async () => {
         try {
             const res = await axios.get(
-                `https://instagram-3-u1yc.onrender.com/otheruser/${user?._id}`
+                `http://localhost:8000/otheruser/${user?._id}`
             );
             if (res.status === 200) {
                 dispatch(getSuggestedUser(res?.data?.otherUser));

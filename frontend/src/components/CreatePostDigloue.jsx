@@ -45,7 +45,7 @@ const CreatePostDigloue = () => {
         try {
             setloading(true);
             const res = await axios.post(
-                `https://instagram-3-u1yc.onrender.com/create`,
+                `http://localhost:8000/create`,
                 formData
             );
             if (res.status === 200) {
