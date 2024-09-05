@@ -13,7 +13,7 @@ const App = () => {
 
     useEffect(() => {
         if (user) {
-            const socketio = io("http://localhost:8000", {
+            const socketio = io(`${window.location.origin}`, {
                 query: {
                     userId: user?._id,
                 },

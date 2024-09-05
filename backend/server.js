@@ -14,7 +14,11 @@ const PORT = process.env.PORT || 8000;
 app.use(cookieParser());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+const corsOptions = {
+    origin: process.env.URL,
+    credentials: true,
+};
+app.use(cors(corsOptions));
 app.use("/", router);
 
 app.use(express.static(path.join(__dirname, "/frontend/build")));
