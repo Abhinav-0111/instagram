@@ -11,10 +11,14 @@ import path from "path";
 dotenv.config();
 const __dirname = path.resolve();
 const PORT = process.env.PORT || 8000;
-app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
+const corsOptions = {
+    origin: process.env.URL,
+    credentials: true,
+};
+app.use(cors(corsOptions));
 app.use("/", router);
 
 app.use(express.static(path.join(__dirname, "/frontend/build")));
