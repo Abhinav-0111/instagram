@@ -7,7 +7,9 @@ const useGetMyProfile = (id) => {
     const dispatch = useDispatch();
     const getProfile = async () => {
         try {
-            const res = await axios.get(`http://localhost:8000/profile/${id}`);
+            const res = await axios.get(
+                `https://instagram-1-3kzd.onrender.com/profile/${id}`
+            );
             dispatch(getMyProfile(res?.data?.user));
             return res;
         } catch (error) {
