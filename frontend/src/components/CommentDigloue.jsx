@@ -48,7 +48,7 @@ export default function CommentDigloue() {
     const commentHandler = async () => {
         try {
             const res = await axios.post(
-                `https://instagram-1-3kzd.onrender.com/comment/${selectedPost?._id}`,
+                `${window.location.origin}/comment/${selectedPost?._id}`,
                 { id: user?._id, text }
             );
             if (res.status === 200) {
@@ -67,7 +67,7 @@ export default function CommentDigloue() {
         if (user?.following?.includes(id)) {
             try {
                 const res = await axios.post(
-                    `https://instagram-1-3kzd.onrender.com/unfollow/${id}`,
+                    `${window.location.origin}/unfollow/${id}`,
                     {
                         id: user?._id,
                     }
@@ -81,7 +81,7 @@ export default function CommentDigloue() {
         } else {
             try {
                 const res = await axios.post(
-                    `https://instagram-1-3kzd.onrender.com/follow/${id}`,
+                    `${window.location.origin}/follow/${id}`,
                     {
                         id: user?._id,
                     }

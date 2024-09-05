@@ -29,7 +29,7 @@ const Profile = () => {
         if (user?.following?.includes(id)) {
             try {
                 const res = await axios.post(
-                    `https://instagram-1-3kzd.onrender.com/unfollow/${id}`,
+                    `${window.location.origin}/unfollow/${id}`,
                     {
                         id: user?._id,
                     }
@@ -43,7 +43,7 @@ const Profile = () => {
         } else {
             try {
                 const res = await axios.post(
-                    `https://instagram-1-3kzd.onrender.com/follow/${id}`,
+                    `${window.location.origin}/follow/${id}`,
                     {
                         id: user?._id,
                     }

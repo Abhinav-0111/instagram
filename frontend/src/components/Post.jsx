@@ -25,7 +25,7 @@ const Post = ({ item }) => {
     const deletePostHandler = async () => {
         try {
             const res = await axios.put(
-                `https://instagram-1-3kzd.onrender.com/deletepost/${item?._id}`,
+                `${window.location.origin}/deletepost/${item?._id}`,
                 {
                     id: user?._id,
                 }
@@ -42,7 +42,7 @@ const Post = ({ item }) => {
     const likeOrDislikeHandle = async (id) => {
         try {
             const res = await axios.put(
-                `https://instagram-1-3kzd.onrender.com/likedislike/${item?._id}`,
+                `${window.location.origin}/likedislike/${item?._id}`,
                 { id: id }
             );
             dispatch(setRefresh());
@@ -54,7 +54,7 @@ const Post = ({ item }) => {
     const commentHandler = async () => {
         try {
             const res = await axios.post(
-                `https://instagram-1-3kzd.onrender.com/comment/${item?._id}`,
+                `${window.location.origin}/comment/${item?._id}`,
                 { id: user?._id, text: comment }
             );
             if (res.status === 200) {
@@ -69,7 +69,7 @@ const Post = ({ item }) => {
     const bookmarkHandler = async () => {
         try {
             const res = await axios.put(
-                `https://instagram-1-3kzd.onrender.com/bookmark/${item?._id}`,
+                `${window.location.origin}/bookmark/${item?._id}`,
                 { id: user?._id }
             );
             dispatch(bookmarkUpdate(item?._id));

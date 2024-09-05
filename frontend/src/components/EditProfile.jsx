@@ -36,7 +36,7 @@ const EditProfile = () => {
         try {
             setloading(true);
             const res = await axios.post(
-                `https://instagram-1-3kzd.onrender.com/profile/edit`,
+                `${window.location.origin}/profile/edit`,
                 formData
             );
             if (res.status == 200) {

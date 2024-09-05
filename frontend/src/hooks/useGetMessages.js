@@ -14,7 +14,7 @@ const useGetMessages = () => {
         }
         try {
             const res = await axios.put(
-                `https://instagram-1-3kzd.onrender.com/message/${selectedUser?._id}`,
+                `${window.location.origin}/message/${selectedUser?._id}`,
                 {
                     id: user?._id,
                 }
