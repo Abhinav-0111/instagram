@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const URL = "http://localhost:8000";
+const URL = "https://instagram-1-3kzd.onrender.com";
 export const authenticationSignup = async (file) => {
     try {
         return await axios.post(`${URL}/signup`, file);
